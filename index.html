@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اليوم الوطني السعودي 96 — عزّنا بطبعنا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #004d3d;
+      --green: #006c35;
+      --green-light: #2d8a5e;
+      --cream: #f4f0e6;
+      --cream-dark: #e8e2d4;
+      --text: #1a2e28;
+      --white: #ffffff;
+      --radius: 14px;
+      --max: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.85;
+      min-height: 100vh;
+    }
+
+    .sadu {
+      height: 12px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--green-dark) 0 8px,
+        var(--cream) 8px 12px,
+        var(--green) 12px 20px,
+        var(--cream) 20px 24px
+      );
+      opacity: 0.85;
+    }
+
+    .sadu-thick {
+      height: 20px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--green-dark) 0 6px,
+        var(--green) 6px 14px,
+        #003328 14px 18px,
+        var(--green) 18px 26px
+      );
+    }
+
+    header {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+      padding: 1.5rem 1.25rem 0;
+      text-align: center;
+      border-bottom: 3px solid var(--green-dark);
+    }
+
+    .logo-badge {
+      display: inline-block;
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--green);
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: var(--green-dark);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-size: clamp(1rem, 3.5vw, 1.15rem);
+      font-weight: 600;
+      color: var(--green-dark);
+      padding: 1rem 1.25rem 1.25rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem 3rem;
+    }
+
+    .verse {
+      text-align: center;
+      font-size: clamp(1.05rem, 4vw, 1.25rem);
+      font-weight: 700;
+      color: var(--green-dark);
+      padding: 1.5rem 0.5rem;
+      line-height: 2;
+    }
+
+    .bullets {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.5rem 0 1.5rem;
+    }
+
+    .bullets p {
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 2rem 0 1rem;
+      text-align: center;
+    }
+
+    .docs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .doc-card {
+      background: var(--white);
+      border: 2px solid var(--cream-dark);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 77, 61, 0.08);
+    }
+
+    .doc-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    .doc-head h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .doc-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .doc-actions a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      background: var(--white);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .doc-actions a:hover {
+      filter: brightness(0.97);
+    }
+
+
+    .doc-type {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+    }
+
+    .doc-head h3 {
+      flex: 1;
+      min-width: 0;
+      line-height: 1.5;
+    }
+
+    .doc-video {
+      width: 100%;
+      display: block;
+      max-height: 70vh;
+      background: #000;
+    }
+
+    .doc-image {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .doc-frame--tall {
+      height: min(520px, 75vh);
+    }
+
+    .doc-note {
+      padding: 1.25rem 1rem;
+      text-align: center;
+      color: #4a5f56;
+      font-size: 0.95rem;
+    }
+
+    .file-count {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-size: 0.85rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      margin-right: 0.35rem;
+      vertical-align: middle;
+    }
+
+    .doc-frame {
+      width: 100%;
+      height: min(420px, 70vh);
+      border: none;
+      display: block;
+      background: #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.25rem 0;
+      background: linear-gradient(180deg, transparent, rgba(0, 108, 53, 0.06));
+    }
+
+    .footer-date {
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .landscape {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-badge">عزّنا بطبعنا</div>
+    <p class="logo-sub">اليوم الوطني السعودي 96 · SAUDI NATIONAL DAY 96</p>
+    <p class="page-title">اليوم الوطني السعودي · 2026 · عزّنا بطبعنا 96</p>
+  </header>
+
+  <div class="sadu" aria-hidden="true"></div>
+
+  <main>
+ 
+  
+    <h2 class="section-title"><span class="file-count">21</span> الملفات والوسائط</h2>
+    <p style="text-align: center; font-size: 0.9rem; color: #4a5f56; margin-bottom: 1rem;">
+      فيديو، صور، PDF، وعروض — معاينة أو تحميل لكل ملف في المجلد.
+    </p>
+
+    <div class="docs">
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">فيديو</span> v2026-10-02 19.08.58</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/v2026-10-02%2019.08.58.mp4" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/v2026-10-02%2019.08.58.mp4" download>تحميل</a>
+          </div>
+        </div>
+        <video class="doc-video" controls playsinline preload="metadata" src="assets/docs/v2026-10-02%2019.08.58.mp4"></video>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">صورة</span> photo_2026-10-02 18.59.37</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/photo_2026-10-02%2018.59.37.jpeg" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/photo_2026-10-02%2018.59.37.jpeg" download>تحميل</a>
+          </div>
+        </div>
+        <img class="doc-image" src="assets/docs/photo_2026-10-02%2018.59.37.jpeg" alt="photo_2026-10-02 18.59.37" loading="lazy">
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">صفحة</span> saudi_national day card</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/saudi_national%20day%20card.html" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/saudi_national%20day%20card.html" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame doc-frame--tall" src="assets/docs/saudi_national%20day%20card.html" title="saudi_national day card"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> Saudi National Day 2</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/Saudi%20National%20Day%202.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/Saudi%20National%20Day%202.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/Saudi%20National%20Day%202.pdf" title="Saudi National Day 2"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> Template-Based Presentation</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/Template-Based%20Presentation.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/Template-Based%20Presentation.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/Template-Based%20Presentation.pdf" title="Template-Based Presentation"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> اليوم الوطني السعودي</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A.pdf" title="اليوم الوطني السعودي"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> اليوم الوطني ٩٦</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D9%A9%D9%A6.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D9%A9%D9%A6.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D9%A9%D9%A6.pdf" title="اليوم الوطني ٩٦"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> اليوم-الوطني-96</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A-96.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A-96.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A-96.pdf" title="اليوم-الوطني-96"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> أخضر_وأبيض_اليوم_الوطني_للمملكة_العربية_السعودية_منشور_Instagram</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%A7%D9%94%D8%AE%D8%B6%D8%B1_%D9%88%D8%A7%D9%94%D8%A8%D9%8A%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D9%84%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%D9%85%D9%86%D8%B4%D9%88%D8%B1_Instagram.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%A7%D9%94%D8%AE%D8%B6%D8%B1_%D9%88%D8%A7%D9%94%D8%A8%D9%8A%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D9%84%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%D9%85%D9%86%D8%B4%D9%88%D8%B1_Instagram.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D8%A7%D9%94%D8%AE%D8%B6%D8%B1_%D9%88%D8%A7%D9%94%D8%A8%D9%8A%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D9%84%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%D9%85%D9%86%D8%B4%D9%88%D8%B1_Instagram.pdf" title="أخضر_وأبيض_اليوم_الوطني_للمملكة_العربية_السعودية_منشور_Instagram"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> أخضر_وبيج_وأبيض_تقليدي_لليوم_الوطني_السعودي_عرض_تقديمي</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%A7%D9%94%D8%AE%D8%B6%D8%B1_%D9%88%D8%A8%D9%8A%D8%AC_%D9%88%D8%A7%D9%94%D8%A8%D9%8A%D8%B6_%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A_%D9%84%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_%D8%B9%D8%B1%D8%B6_%D8%AA%D9%82%D8%AF%D9%8A%D9%85%D9%8A.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%A7%D9%94%D8%AE%D8%B6%D8%B1_%D9%88%D8%A8%D9%8A%D8%AC_%D9%88%D8%A7%D9%94%D8%A8%D9%8A%D8%B6_%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A_%D9%84%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_%D8%B9%D8%B1%D8%B6_%D8%AA%D9%82%D8%AF%D9%8A%D9%85%D9%8A.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D8%A7%D9%94%D8%AE%D8%B6%D8%B1_%D9%88%D8%A8%D9%8A%D8%AC_%D9%88%D8%A7%D9%94%D8%A8%D9%8A%D8%B6_%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A_%D9%84%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_%D8%B9%D8%B1%D8%B6_%D8%AA%D9%82%D8%AF%D9%8A%D9%85%D9%8A.pdf" title="أخضر_وبيج_وأبيض_تقليدي_لليوم_الوطني_السعودي_عرض_تقديمي"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> عرض اليوم الوطني (1)</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%281%29.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%281%29.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%281%29.pdf" title="عرض اليوم الوطني (1)"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> عرض_اليوم_الوطني_السعودي_عزنا_بطبعنا_96_</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%B9%D8%B1%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_%D8%B9%D8%B2%D9%86%D8%A7_%D8%A8%D8%B7%D8%A8%D8%B9%D9%86%D8%A7_96_.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%B9%D8%B1%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_%D8%B9%D8%B2%D9%86%D8%A7_%D8%A8%D8%B7%D8%A8%D8%B9%D9%86%D8%A7_96_.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D8%B9%D8%B1%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_%D8%B9%D8%B2%D9%86%D8%A7_%D8%A8%D8%B7%D8%A8%D8%B9%D9%86%D8%A7_96_.pdf" title="عرض_اليوم_الوطني_السعودي_عزنا_بطبعنا_96_"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> لعبة اليوم الوطني</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D9%84%D8%B9%D8%A8%D8%A9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D9%84%D8%B9%D8%A8%D8%A9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D9%84%D8%B9%D8%A8%D8%A9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A.pdf" title="لعبة اليوم الوطني"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> مستند-1</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D9%85%D8%B3%D8%AA%D9%86%D8%AF-1.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D9%85%D8%B3%D8%AA%D9%86%D8%AF-1.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D9%85%D8%B3%D8%AA%D9%86%D8%AF-1.pdf" title="مستند-1"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> مستند-2</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D9%85%D8%B3%D8%AA%D9%86%D8%AF-2.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D9%85%D8%B3%D8%AA%D9%86%D8%AF-2.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D9%85%D8%B3%D8%AA%D9%86%D8%AF-2.pdf" title="مستند-2"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> مشروع اليوم الوطني</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20.pdf" title="مشروع اليوم الوطني"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> مشروع اليوم الوطني</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A.pdf" title="مشروع اليوم الوطني"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PDF</span> اليوم الوطني السعودي</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%E2%80%8E%E2%81%A8%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%E2%81%A9.pdf" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%E2%80%8E%E2%81%A8%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%E2%81%A9.pdf" download>تحميل</a>
+          </div>
+        </div>
+        <iframe class="doc-frame" src="assets/docs/%E2%80%8E%E2%81%A8%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%E2%81%A9.pdf" title="اليوم الوطني السعودي"></iframe>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PPTX</span> عرض اليوم الوطني السعودي</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A.pptx" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A.pptx" download>تحميل</a>
+          </div>
+        </div>
+        <p class="doc-note">ملف PowerPoint — افتحه أو حمّله على جهازك.</p>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PPTX</span> عرض اليوم الوطني</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%E2%80%8E%E2%81%A8%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%E2%81%A9.pptx" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%E2%80%8E%E2%81%A8%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%E2%81%A9.pptx" download>تحميل</a>
+          </div>
+        </div>
+        <p class="doc-note">ملف PowerPoint — افتحه أو حمّله على جهازك.</p>
+      </article>
+      <article class="doc-card">
+        <div class="doc-head">
+          <h3><span class="doc-type">PPTX</span> عرض_اليوم_الوطني_السعودي_96</h3>
+          <div class="doc-actions">
+            <a href="assets/docs/%E2%80%8E%E2%81%A8%D8%B9%D8%B1%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_96%E2%81%A9.pptx" target="_blank" rel="noopener">فتح</a>
+            <a href="assets/docs/%E2%80%8E%E2%81%A8%D8%B9%D8%B1%D8%B6_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A_96%E2%81%A9.pptx" download>تحميل</a>
+          </div>
+        </div>
+        <p class="doc-note">ملف PowerPoint — افتحه أو حمّله على جهازك.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-date">23 سبتمبر 2026 · 11 ربيع الأول 1448هـ</p>
+    <svg class="landscape" viewBox="0 0 720 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect fill="#87c9a8" width="720" height="80"/>
+      <path fill="#006c35" d="M0 50 Q180 20 360 45 T720 35 L720 80 L0 80 Z"/>
+      <path fill="#004d3d" d="M0 60 Q200 40 400 55 T720 48 L720 80 L0 80 Z"/>
+      <ellipse cx="120" cy="42" rx="8" ry="22" fill="#004d3d"/>
+      <ellipse cx="600" cy="38" rx="10" ry="26" fill="#004d3d"/>
+    </svg>
+    <div class="sadu-thick" aria-hidden="true"></div>
+  </footer>
+</body>
+</html>
